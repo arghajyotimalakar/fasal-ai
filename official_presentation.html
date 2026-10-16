@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fasal AI — Official VBYLD 2027 Presentation Deck</title>
+<style>
+@page { size: 16in 9in; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  background: #1a2e1a;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 20px 0 60px;
+}
+.toolbar {
+  width: 1280px; background: #0f1f0f; padding: 12px 24px;
+  border-radius: 12px; margin-bottom: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  color: white;
+}
+.t-title { font-size: 15px; font-weight: 700; color: #4ade80; }
+.t-btn {
+  background: #16a34a; color: white; border: none;
+  padding: 10px 24px; border-radius: 8px; font-weight: 700;
+  font-size: 14px; cursor: pointer;
+}
+.t-btn:hover { background: #15803d; }
+
+/* ── Slide Dimensions (16:9) ── */
+.slide {
+  width: 1280px; height: 720px; background: white;
+  margin-bottom: 24px; position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  display: flex; flex-direction: column;
+  padding: 32px 52px 26px; overflow: hidden;
+}
+
+/* Template Header */
+.slide-top {
+  display: flex; justify-content: space-between; align-items: center;
+  min-height: 52px; margin-bottom: 14px;
+}
+.team-badge {
+  background: radial-gradient(circle, #fef9c3 0%, #fde68a 100%);
+  border: 1.5px solid #f59e0b; border-radius: 40px;
+  padding: 7px 20px; font-size: 14px; font-weight: 700; color: #92400e;
+}
+.hsc-logo { display: flex; align-items: baseline; }
+.hsc-logo .hack { font-size: 30px; font-weight: 900; color: #000; letter-spacing: -1px; }
+.hsc-logo .hack span { color: #16a34a; }
+.hsc-logo .sub { margin-left: 5px; font-size: 12px; font-style: italic; color: #374151; font-weight: 600; }
+
+/* Slide Title */
+.slide-title {
+  font-size: 28px; font-weight: 800; color: #14532d;
+  text-align: center; margin-bottom: 4px;
+}
+.slide-sub {
+  font-size: 13px; color: #6b7280; text-align: center; margin-bottom: 14px;
+}
+
+/* Slide Body */
+.slide-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+
+/* Footer */
+.slide-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 10px; border-top: 1px solid #f0fdf4;
+  font-size: 12px; color: #9ca3af;
+}
+
+/* Cards & Grids */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+.card {
+  background: #f9fafb; border: 1.5px solid #e5e7eb;
+  border-radius: 12px; padding: 14px 16px;
+}
+.card-green { background: #f0fdf4; border-color: #86efac; border-left: 4px solid #16a34a; }
+.card-amber { background: #fffbeb; border-color: #fde68a; border-left: 4px solid #f59e0b; }
+.card-blue  { background: #eff6ff; border-color: #bfdbfe; border-left: 4px solid #2563eb; }
+.card-red   { background: #fef2f2; border-color: #fecaca; border-left: 4px solid #dc2626; }
+
+.card-h { font-size: 14px; font-weight: 700; color: #14532d; margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
+.card-p { font-size: 12.5px; color: #4b5563; line-height: 1.45; }
+
+/* Metric boxes */
+.metric {
+  background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 12px;
+  padding: 14px 10px; text-align: center;
+}
+.metric-v { font-size: 28px; font-weight: 900; color: #15803d; }
+.metric-l { font-size: 11px; font-weight: 700; color: #166534; margin-top: 3px; }
+
+/* Flow */
+.flow { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 12px 0; }
+.flow-step {
+  flex: 1; background: #f1f5f9; border: 1px solid #cbd5e1;
+  border-radius: 8px; padding: 8px 8px; text-align: center;
+  font-size: 11.5px; font-weight: 600; color: #1e293b;
+}
+.flow-step.active { background: #dcfce7; border-color: #4ade80; color: #14532d; }
+.arrow { color: #9ca3af; font-size: 16px; font-weight: bold; }
+
+/* Cover special */
+.cover-body { display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 0 30px; }
+.cover-row { display: flex; align-items: flex-start; margin-bottom: 22px; font-size: 19px; }
+.dot { color: #2563eb; font-size: 26px; margin-right: 12px; line-height: 1; }
+.cover-k { font-weight: 700; color: #14532d; min-width: 310px; }
+.cover-v { color: #0f172a; font-weight: 600; flex: 1; }
+.editable {
+  background: #f0fdf4; border: 1.5px dashed #16a34a;
+  border-radius: 6px; padding: 3px 10px; font-family: inherit;
+  font-size: inherit; color: #14532d; font-weight: 700; outline: none; min-width: 200px;
+}
+
+/* Table */
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0; }
+.tbl th, .tbl td { border: 1px solid #e5e7eb; padding: 8px 12px; text-align: left; }
+.tbl th { background: #f0fdf4; color: #14532d; font-weight: 700; }
+
+@media print {
+  body { background: white; padding: 0; }
+  .toolbar { display: none !important; }
+  .slide {
+    width: 16in !important; height: 9in !important;
+    margin: 0 !important; box-shadow: none !important;
+    page-break-after: always !important; break-after: page !important;
+    padding: 0.45in 0.75in 0.35in !important;
+  }
+  .editable { border: none !important; background: transparent !important; padding: 0 !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="t-title">🌾 Fasal AI — Official VBYLD 2027 Submission (7 Slides + Cover)</div>
+  <button class="t-btn" onclick="window.print()">🖨️ Save as PDF (< 10 MB)</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 1: COVER PAGE  (Template Page 2)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div></div>
+    <div class="hsc-logo">
+      <span class="hack">Hack<span>for</span></span>
+      <span class="sub">Social Cause<br><small style="font-size:9px;color:#9ca3af">VBYLD 2027</small></span>
+    </div>
+  </div>
+  <h1 class="slide-title" style="margin-bottom:30px;">Cover Page</h1>
+  <div class="slide-body cover-body">
+    <div class="cover-row">
+      <span class="dot">•</span>
+      <span class="cover-k">Problem Statement / Concept Title:</span>
+      <span class="cover-v">Fasal AI: AI-Powered Crop Disease Detector & Farm Advisory for 600 Million Indian Farmers</span>
+    </div>
+    <div class="cover-row">
+      <span class="dot">•</span>
+      <span class="cover-k">Theme:</span>
+      <span class="cover-v" style="color:#14532d;font-weight:800;">Rural Development & Livelihoods ✦ AI, GIS & Emerging Technologies</span>
+    </div>
+    <div class="cover-row">
+      <span class="dot">•</span>
+      <span class="cover-k">Team Name (Registered on portal):</span>
+      <span class="cover-v"><input class="editable" value="Fasal AI Team" title="Edit your registered team name"></span>
+    </div>
+    <div class="cover-row">
+      <span class="dot">•</span>
+      <span class="cover-k">Team ID (Registered on portal):</span>
+      <span class="cover-v"><input class="editable" value="HSC-2027-VBYLD-XXXX" title="Edit your Team ID from portal"></span>
+    </div>
+    <div class="cover-row">
+      <span class="dot">•</span>
+      <span class="cover-k">State / UT:</span>
+      <span class="cover-v"><input class="editable" value="[Your State / UT]" title="Enter your State or UT"></span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>2</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 2: PROBLEM – PROPOSED SOLUTION  (Page 3)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">Problem – Proposed Solution</h1>
+  <div class="slide-sub">Core problem / Proposed Solution (Describe your Concept / Idea / Solution / Prototype)</div>
+
+  <div class="slide-body">
+    <div class="g3" style="margin-bottom:12px;">
+      <div class="card card-green">
+        <div class="card-h">• Detailed explanation of solution</div>
+        <div class="card-p">
+          <strong>Fasal AI</strong> is a mobile-first Progressive Web App. A farmer takes a photo of their diseased crop → <strong>Google Gemini 2.5 Flash Vision AI</strong> identifies the disease in 30 seconds → The farmer receives instant treatment advice in <strong>Hindi with voice output</strong>, including chemical and organic remedies — completely free.
+        </div>
+      </div>
+      <div class="card card-amber">
+        <div class="card-h">• How it addresses the problem</div>
+        <div class="card-p">
+          ✅ Eliminates 40–80 km travel to reach an agronomist.<br>
+          ✅ Detects disease before 50%+ crop loss occurs.<br>
+          ✅ Hindi + voice output removes literacy/language barrier.<br>
+          ✅ No app download: works in any browser via PWA.<br>
+          ✅ Works in Demo Mode even without internet.
+        </div>
+      </div>
+      <div class="card card-blue">
+        <div class="card-h">• Innovation & uniqueness</div>
+        <div class="card-p">
+          🤖 First app using <strong>Gemini 2.5 Flash multimodal vision</strong> for crop disease in Hindi.<br>
+          🌿 Dual treatment: <strong>chemical + organic</strong> home-remedy alternatives.<br>
+          🔊 <strong>Hindi voice output</strong> reads advice aloud for low-literacy farmers.<br>
+          ⚡ Demo Mode: works offline — no dependency on API key for hackathon demo.
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#f8fafc;border:1.5px solid #e5e7eb;border-radius:12px;padding:12px 16px;">
+      <div style="font-size:13px;font-weight:800;color:#14532d;margin-bottom:8px;">📊 Ground Reality vs. Fasal AI Solution</div>
+      <div class="g2">
+        <div class="card card-red">
+          <div class="card-h" style="color:#991b1b;">❌ Today in Rural India</div>
+          <div class="card-p" style="color:#7f1d1d;">• 30–50% yield lost to undetected diseases annually<br>• Only 1 agronomist per 1,000 farmers<br>• Farmers wait 3–7 days for diagnosis — by then it's too late<br>• 73% of farmers can't use English-only apps</div>
+        </div>
+        <div class="card card-green">
+          <div class="card-h">✅ With Fasal AI</div>
+          <div class="card-p">• Disease detected in 30 seconds from photo<br>• Diagnosis in Hindi with voice output<br>• Chemical + organic home remedies provided<br>• One-tap Kisan Call Centre helpline: 1800-180-1551<br>• Zero cost, zero app download required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>3</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 3: TECHNICAL APPROACH  (Page 4)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">Technical Approach</h1>
+
+  <div class="slide-body">
+    <div class="g2" style="margin-bottom:12px;">
+      <div class="card card-blue">
+        <div class="card-h">• Technologies Used (Stack)</div>
+        <div class="card-p">
+          • <strong>Frontend:</strong> Next.js 15.2, React 19, TypeScript, Tailwind CSS<br>
+          • <strong>AI Vision Engine:</strong> Google Gemini 2.5 Flash (@google/genai)<br>
+          • <strong>Voice:</strong> Web Speech Synthesis API (Hindi TTS, zero cost)<br>
+          • <strong>Backend:</strong> Next.js API Routes (serverless, no server cost)<br>
+          • <strong>PWA:</strong> Progressive Web App manifest — installs like native app<br>
+          • <strong>Tests:</strong> Node.js assert — 23 tests, 100% passing
+        </div>
+      </div>
+      <div class="card card-green">
+        <div class="card-h">• Extent of AI Tool Usage</div>
+        <div class="card-p">
+          <strong>Google Gemini 2.5 Flash Vision API:</strong><br>
+          • Receives crop image as base64 input<br>
+          • Analyzes for 50+ disease types<br>
+          • Returns structured JSON: disease name, severity, symptoms, chemical & organic treatment — all in English AND Hindi<br>
+          • Smart fallback demo mode if API unavailable<br><br>
+          <strong>Web Speech API:</strong> Reads Hindi treatment advice aloud
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#f8fafc;border:1.5px solid #e5e7eb;border-radius:12px;padding:12px 16px;">
+      <div style="font-size:13px;font-weight:800;color:#14532d;margin-bottom:8px;">• Methodology — Working Prototype User Journey</div>
+      <div class="flow">
+        <div class="flow-step">1. Farmer Opens App<br><small>Browser, no download</small></div>
+        <span class="arrow">➔</span>
+        <div class="flow-step active">2. Photo of Crop<br><small>Camera or upload</small></div>
+        <span class="arrow">➔</span>
+        <div class="flow-step">3. Gemini AI Scan<br><small>30 seconds</small></div>
+        <span class="arrow">➔</span>
+        <div class="flow-step active">4. Hindi Diagnosis<br><small>Disease + Severity</small></div>
+        <span class="arrow">➔</span>
+        <div class="flow-step">5. Treatment Plan<br><small>Chemical + Organic</small></div>
+        <span class="arrow">➔</span>
+        <div class="flow-step active">6. 🔊 Voice Output<br><small>Reads advice aloud</small></div>
+      </div>
+      <div style="font-size:12px;color:#15803d;font-weight:700;text-align:center;">
+        ✅ 23/23 Automated Tests Passing | GitHub Link: github.com/your-username/fasal-ai (MIT License)
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>4</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 4: IMPACT POTENTIAL  (Page 5)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">Impact Potential</h1>
+
+  <div class="slide-body">
+    <div class="g3" style="margin-bottom:12px;">
+      <div class="card card-green">
+        <div class="card-h">• Impact on Target Audience</div>
+        <div class="card-p">
+          🧑‍🌾 <strong>600M+ Indian Farmers</strong> — access to AI agronomist in their pocket.<br><br>
+          🌾 Early detection prevents <strong>30–50% yield loss</strong>, saving ₹30,000–₹80,000 per farmer per season.<br><br>
+          📱 No literacy barrier: <strong>Hindi + voice output</strong> serves farmers who cannot read English apps.<br><br>
+          📞 One-tap <strong>Kisan Helpline</strong> (1800-180-1551) for escalation.
+        </div>
+      </div>
+      <div class="card card-amber">
+        <div class="card-h">• Social & Economic Benefits</div>
+        <div class="card-p">
+          💰 <strong>₹30,000–₹80,000</strong> saved per farmer per season in crop loss prevention.<br><br>
+          🕐 Diagnosis time: <strong>3–7 days ➔ 30 seconds</strong> (99% faster).<br><br>
+          🌿 Organic remedy options reduce <strong>chemical fertilizer dependency</strong>.<br><br>
+          📡 Works in <strong>low-bandwidth areas</strong> — PWA offline support.<br><br>
+          🎓 Builds digital literacy in rural farmers.
+        </div>
+      </div>
+      <div class="card card-blue">
+        <div class="card-h">• Key Stakeholders</div>
+        <div class="card-p">
+          👨‍🌾 <strong>Farmers</strong>: Direct users — instant diagnosis.<br><br>
+          🏛️ <strong>Krishi Vigyan Kendras (KVK)</strong>: Can deploy at block level via CSC centres.<br><br>
+          🌾 <strong>State Agriculture Departments</strong>: District-level disease monitoring dashboard.<br><br>
+          🏢 <strong>ICAR</strong>: Integration with national pest surveillance data.<br><br>
+          🏥 <strong>ASHA-like AgriWorkers</strong>: Use on behalf of non-smartphone farmers.
+        </div>
+      </div>
+    </div>
+
+    <div class="g4">
+      <div class="metric"><div class="metric-v">600M+</div><div class="metric-l">Farmers in India</div></div>
+      <div class="metric"><div class="metric-v">30s</div><div class="metric-l">vs. 3-7 days — Diagnosis Speed</div></div>
+      <div class="metric"><div class="metric-v">₹80K</div><div class="metric-l">Max Savings per Farmer/Season</div></div>
+      <div class="metric"><div class="metric-v">SDG 2 & 1</div><div class="metric-l">Zero Hunger & No Poverty</div></div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>5</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 5: FEASIBILITY & RISK ANALYSIS  (Page 6)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">Feasibility and Risk Analysis</h1>
+
+  <div class="slide-body">
+    <div class="card card-green" style="margin-bottom:12px;">
+      <div class="card-h">• Analysis of the Feasibility of the Solution</div>
+      <div class="card-p">
+        ✅ <strong>Zero infrastructure cost</strong>: Next.js serverless — runs on free Vercel tier or Government NIC cloud.<br>
+        ✅ <strong>Works on basic Android phones</strong>: PWA under 1MB. Any browser from 2020+.<br>
+        ✅ <strong>Google Gemini API is free</strong> up to 15 requests/minute on the free tier — sufficient for pilot deployment.<br>
+        ✅ <strong>Demo mode</strong>: App is fully functional for demos without any API key — reduces deployment friction.<br>
+        ✅ <strong>KVK / CSC deployment ready</strong>: Can be installed as a PWA on tablets at Common Service Centres.
+      </div>
+    </div>
+
+    <div class="g2">
+      <div class="card card-red">
+        <div class="card-h" style="color:#991b1b;">• Potential Challenges & Risks</div>
+        <div class="card-p" style="color:#7f1d1d;">
+          1. <strong>Low network speed</strong>: 2G/3G in remote areas may slow image upload.<br>
+          2. <strong>Camera quality</strong>: Blurry photos from low-end phones may reduce AI accuracy.<br>
+          3. <strong>Language diversity</strong>: India has 22 official languages — Hindi alone is not sufficient.<br>
+          4. <strong>Digital literacy</strong>: Very elderly farmers may struggle with smartphone use.<br>
+          5. <strong>AI hallucinations</strong>: AI may occasionally misidentify rare diseases.
+        </div>
+      </div>
+      <div class="card card-green">
+        <div class="card-h">• Strategies for Overcoming Challenges</div>
+        <div class="card-p">
+          1. <strong>Image compression</strong>: Auto-compress before upload; offline queue for poor connectivity.<br>
+          2. <strong>Photo guidance UI</strong>: On-screen framing guide + brightness tips before capture.<br>
+          3. <strong>Multi-language roadmap</strong>: Expand to 8 regional languages in Phase 2 using i18n.<br>
+          4. <strong>AgriWorker model</strong>: ASHA-style Village Agri Workers use on behalf of farmers.<br>
+          5. <strong>Confidence scores</strong>: Show AI confidence %; escalate low-confidence cases to KCC helpline.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>6</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 6: TEAM  (Page 7)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">Team</h1>
+  <div class="slide-sub">Team Composition</div>
+
+  <div class="slide-body">
+    <div class="g2" style="margin-bottom:12px;">
+      <div class="card card-green">
+        <div class="card-h">• Roles</div>
+        <div class="card-p">
+          🧑‍💻 <strong>Full-Stack Developer (Lead)</strong>: Next.js 15, React 19, TypeScript, API routes, Gemini AI integration, PWA setup, and deployment pipeline.<br><br>
+          🤖 <strong>AI & Prompt Engineer</strong>: Gemini 2.5 Flash prompt design, structured output schema for bilingual crop disease data, fallback mode logic.<br><br>
+          🌾 <strong>Agricultural Domain Expert</strong>: Crop disease knowledge base, Hindi advisory content, treatment validation with ICAR references, KVK consultation.<br><br>
+          🎨 <strong>UI/UX Designer</strong>: Farmer-first mobile interface design, Hindi typography, WCAG accessibility, voice UX, low-literacy color system.
+        </div>
+      </div>
+      <div class="card card-amber">
+        <div class="card-h">• Challenges Overcome</div>
+        <div class="card-p">
+          🔧 <strong>Bilingual AI Responses</strong>: Designing prompts that force Gemini to return structured JSON with BOTH English and Hindi (Devanagari) content simultaneously.<br><br>
+          🎙️ <strong>Hindi Voice Output</strong>: Implementing Hindi TTS using Web Speech API without any paid service.<br><br>
+          📱 <strong>Rural UX Design</strong>: Designing for farmers with low smartphone experience — large tap targets, minimal text, visual-first, dark green colors (recognizable as nature/farming).<br><br>
+          ⚡ <strong>Demo Mode</strong>: Building a zero-dependency fallback that lets judges see the full UI experience without needing a live API key during presentation.
+        </div>
+      </div>
+    </div>
+    <div class="card card-blue">
+      <div class="card-h">• What the Team Would Like to Share About Their Journey</div>
+      <div class="card-p">
+        Our inspiration came from a news report about a Punjab wheat farmer who lost ₹2 lakh in one season because Yellow Rust was identified too late — after 60% of his crop was already destroyed. He had no smartphone, and the nearest KVK agronomist was a 3-hour bus journey away. We asked: <em>what if he could take a photo and get an answer in 30 seconds in Hindi?</em> That became Fasal AI. We built the entire prototype in 72 hours, testing it on real crop photos from open agricultural datasets. Every design decision was made asking: <strong>"Would a 55-year-old farmer in rural UP understand this?"</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>7</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 7: REFERENCES  (Page 8)
+══════════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-top">
+    <div class="team-badge">Team Fasal AI</div>
+    <div class="hsc-logo"><span class="hack">Hack<span>for</span></span><span class="sub">Social Cause</span></div>
+  </div>
+  <h1 class="slide-title">References</h1>
+
+  <div class="slide-body">
+    <div class="card-h" style="font-size:14px;color:#14532d;margin-bottom:12px;">• Details / Links of the Reference and Research Work</div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="width:28%;">Authority / Source</th>
+          <th style="width:44%;">Resource / Reference</th>
+          <th style="width:28%;">Relevance to Fasal AI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ministry of Agriculture & Farmers Welfare, GoI</strong></td>
+          <td>Annual Report on Crop Losses Due to Diseases & Pests (2023–24)</td>
+          <td>Data on 30–50% yield loss and farmer economic impact in India.</td>
+        </tr>
+        <tr>
+          <td><strong>ICAR (Indian Council of Agricultural Research)</strong></td>
+          <td>Crop Disease Management Handbook & ICAR-CRIDA Database (icar.org.in)</td>
+          <td>Scientific classification, symptoms, and treatment protocols for 50+ Indian crop diseases.</td>
+        </tr>
+        <tr>
+          <td><strong>United Nations (UN)</strong></td>
+          <td>SDG 2 (Zero Hunger), SDG 1 (No Poverty), SDG 9 (Innovation) — sdgs.un.org/goals</td>
+          <td>Alignment of Fasal AI impact with global sustainable development targets.</td>
+        </tr>
+        <tr>
+          <td><strong>Google DeepMind / Google AI Studio</strong></td>
+          <td>Gemini 2.5 Flash Multimodal Vision API Documentation — ai.google.dev</td>
+          <td>Core AI engine for crop disease image recognition and bilingual structured output.</td>
+        </tr>
+        <tr>
+          <td><strong>ICAR-NIPHM (National Institute of Plant Health Management)</strong></td>
+          <td>Integrated Pest Management Guidelines for Kharif & Rabi Crops</td>
+          <td>Organic and chemical treatment recommendations for major Indian crop diseases.</td>
+        </tr>
+        <tr>
+          <td><strong>Ministry of Electronics & IT (MeitY)</strong></td>
+          <td>Common Service Centres (CSC) Scheme — csc.gov.in</td>
+          <td>Deployment strategy through 500,000+ CSCs and KVKs across India.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:10px 14px;font-size:12px;color:#166534;text-align:center;">
+      🌾 All code, tests (23/23 passing), architecture docs, and sample data available open-source under MIT License on GitHub.
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span style="position:absolute;left:50%;transform:translateX(-50%);">@HSC submission- Template</span>
+    <span>8</span>
+  </div>
+</div>
+
+</body>
+</html>

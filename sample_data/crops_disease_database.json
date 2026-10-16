@@ -1,0 +1,122 @@
+{
+  "version": "1.0.0",
+  "dataset": "ICAR-Aligned Indian Crop Disease Formulary",
+  "records": [
+    {
+      "id": "wheat-yellow-rust",
+      "cropName": "Wheat",
+      "cropNameHindi": "गेहूँ",
+      "diseaseName": "Wheat Yellow Rust (Stripe Rust)",
+      "diseaseNameHindi": "गेहूँ का पीला रतुआ (पट्टी रोग)",
+      "season": "Rabi",
+      "pathogen": "Puccinia striiformis (Fungus)",
+      "severity": "HIGH",
+      "idealWeather": "Cool, moist weather (10-15°C) with persistent fog/dew",
+      "symptoms": [
+        "Yellow-orange powdery stripes on leaves parallel to veins",
+        "Leaves drying up and turning brown prematurely",
+        "Severely stunted plant growth with shriveled grain formation"
+      ],
+      "symptomsHindi": [
+        "पत्तियों पर पीले-नारंगी रंग की धारियाँ",
+        "पत्तियाँ सूखकर समय से पहले भूरी होना",
+        "अनाज के दाने सिकुड़ना और पौधे का विकास रुकना"
+      ],
+      "treatment": {
+        "immediate": [
+          "Remove and burn infected leaves immediately to contain airborne spores",
+          "Drain standing water from the field"
+        ],
+        "chemical": [
+          "Spray Propiconazole 25% EC @ 1ml per litre of water",
+          "Alternative: Tebuconazole 25.9% EC @ 0.75ml per litre"
+        ],
+        "organic": [
+          "Spray 5% aqueous Neem Seed Kernel Extract (NSKE) or diluted Neem Oil (5ml/L)",
+          "Turmeric powder (5g/L) mixed with sour buttermilk spray as natural antifungal"
+        ]
+      },
+      "prevention": [
+        "Sow certified rust-resistant varieties like HD-2967, PBW-550, or DBW-187",
+        "Avoid excessive nitrogenous fertilization during vegetative phase"
+      ],
+      "estimatedYieldLoss": "30% to 50% if untreated within 10 days"
+    },
+    {
+      "id": "rice-blast",
+      "cropName": "Rice (Paddy)",
+      "cropNameHindi": "धान",
+      "diseaseName": "Rice Blast Disease",
+      "diseaseNameHindi": "धान का झुलसा रोग (ब्लास्ट)",
+      "season": "Kharif",
+      "pathogen": "Magnaporthe oryzae (Fungus)",
+      "severity": "CRITICAL",
+      "idealWeather": "High humidity (>90%) with night temperatures around 20°C",
+      "symptoms": [
+        "Diamond or spindle-shaped lesions with gray-white centres and brown margins",
+        "Neck rot causing panicles to fall over and turn white (empty grains)"
+      ],
+      "symptomsHindi": [
+        "पत्तियों पर नाव के आकार के धब्बे जिनका केंद्र सफेद-धूसर होता है",
+        "बाली की गर्दन सड़ना जिससे बालियां सफेद होकर गिर जाती हैं"
+      ],
+      "treatment": {
+        "immediate": [
+          "Withhold nitrogen fertilizers immediately",
+          "Drain field water for 24-48 hours if possible"
+        ],
+        "chemical": [
+          "Spray Tricyclazole 75% WP @ 0.6g per litre of water",
+          "Alternative: Isoprothiolane 40% EC @ 1.5ml per litre"
+        ],
+        "organic": [
+          "Spray Cow urine solution (10% diluted) with fermented garlic extract",
+          "Pseudomonas fluorescens bio-agent @ 5g per litre of water"
+        ]
+      },
+      "prevention": [
+        "Seed treatment with Carbendazim 50% WP @ 2g/kg seed before sowing",
+        "Maintain balanced NPK ratio (120:60:40 kg/ha)"
+      ],
+      "estimatedYieldLoss": "40% to 70% in epidemic conditions"
+    },
+    {
+      "id": "tomato-early-blight",
+      "cropName": "Tomato",
+      "cropNameHindi": "टमाटर",
+      "diseaseName": "Early Blight",
+      "diseaseNameHindi": "टमाटर का अगेती झुलसा",
+      "season": "Year-round",
+      "pathogen": "Alternaria solani (Fungus)",
+      "severity": "MEDIUM",
+      "idealWeather": "Warm temperatures (24-29°C) with intermittent rain/heavy dew",
+      "symptoms": [
+        "Concentric target-board rings on older lower leaves",
+        "Leaves turn yellow around spots and drop off defoliating the plant"
+      ],
+      "symptomsHindi": [
+        "निचली पत्तियों पर छल्लेदार (टारगेट जैसी) गोल भूरी धारियाँ",
+        "पत्तियाँ पीली होकर झड़ना जिससे फल धूप में झुलस जाते हैं"
+      ],
+      "treatment": {
+        "immediate": [
+          "Prune lower infected foliage up to 12 inches from ground",
+          "Water only at the root base; avoid overhead sprinkler wetting"
+        ],
+        "chemical": [
+          "Spray Mancozeb 75% WP @ 2g per litre of water",
+          "Alternative: Azoxystrobin 23% SC @ 1ml per litre"
+        ],
+        "organic": [
+          "Baking soda spray (5g/L) with 2ml vegetable oil as surfactant",
+          "Trichoderma viride bio-fungicide soil drenching"
+        ]
+      },
+      "prevention": [
+        "Follow 3-year crop rotation avoiding Solanaceae family plants",
+        "Mulch beds with dry paddy straw to prevent fungal soil splash"
+      ],
+      "estimatedYieldLoss": "20% to 35% reduction in marketable fruit"
+    }
+  ]
+}

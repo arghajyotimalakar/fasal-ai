@@ -1,0 +1,63 @@
+{
+  "testSuiteName": "Fasal AI Automated Validation Test Cases",
+  "version": "1.0",
+  "testCases": [
+    {
+      "testId": "TC-01",
+      "category": "Classification",
+      "input": {
+        "confidenceScore": 90,
+        "affectedAreaPercent": 70
+      },
+      "expectedOutput": {
+        "severity": "CRITICAL"
+      },
+      "description": "Verifies that crops with high confidence and widespread infection (>60%) trigger CRITICAL emergency alerts."
+    },
+    {
+      "testId": "TC-02",
+      "category": "Classification",
+      "input": {
+        "confidenceScore": 95,
+        "affectedAreaPercent": 0
+      },
+      "expectedOutput": {
+        "severity": "HEALTHY"
+      },
+      "description": "Verifies that crops showing zero diseased spots are correctly classified as healthy."
+    },
+    {
+      "testId": "TC-03",
+      "category": "Crop Season Mapping",
+      "input": {
+        "crop": "Wheat"
+      },
+      "expectedOutput": {
+        "season": "RABI"
+      },
+      "description": "Confirms Indian winter season classification for wheat crops."
+    },
+    {
+      "testId": "TC-04",
+      "category": "Crop Season Mapping",
+      "input": {
+        "crop": "Rice (Paddy)"
+      },
+      "expectedOutput": {
+        "season": "KHARIF"
+      },
+      "description": "Confirms Indian monsoon season classification for paddy crops."
+    },
+    {
+      "testId": "TC-05",
+      "category": "Multilingual Hindi Output",
+      "input": {
+        "text": "गेहूँ का पीला रतुआ"
+      },
+      "expectedOutput": {
+        "isDevanagari": true
+      },
+      "description": "Ensures that all diagnosis strings contain valid Devanagari Hindi characters for vernacular accessibility."
+    }
+  ]
+}
