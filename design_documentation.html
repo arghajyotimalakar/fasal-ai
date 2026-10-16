@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fasal AI — UI/UX Design Notes & Wireframes (VBYLD 2027)</title>
+  <style>
+    :root {
+      --primary: #16a34a;
+      --primary-dark: #14532d;
+      --accent-amber: #d97706;
+      --alert-red: #dc2626;
+      --bg: #f0fdf4;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Noto Sans Devanagari', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    h1 { color: var(--primary-dark); font-size: 28px; margin-bottom: 8px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #dcfce7;
+      color: var(--primary-dark);
+      margin-right: 8px;
+    }
+    .print-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+    }
+    .print-btn:hover { background: var(--primary-dark); }
+    h2 {
+      color: var(--primary-dark);
+      font-size: 20px;
+      margin: 32px 0 16px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    h3 { font-size: 16px; color: #15803d; margin: 20px 0 10px; }
+    p { margin-bottom: 14px; color: #334155; }
+    .wireframe-box {
+      background: #0f2913;
+      color: #86efac;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.45;
+      white-space: pre;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border: 1px solid #166534;
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .color-card {
+      padding: 16px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .color-card small { display: block; font-weight: normal; font-size: 12px; opacity: 0.9; }
+    .bg-green-dark { background: #14532d; }
+    .bg-green { background: #16a34a; }
+    .bg-amber { background: #d97706; }
+    .bg-red { background: #dc2626; }
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13.5px;
+    }
+    .table-custom th, .table-custom td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+    .table-custom th { background: #f0fdf4; color: var(--primary-dark); font-weight: 700; }
+    @media print {
+      body { background: white; padding: 0; }
+      .container { box-shadow: none; padding: 20px; max-width: 100%; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div>
+      <h1>Fasal AI (फसल AI) — Design Notes & UI/UX Wireframes</h1>
+      <p style="margin: 0; color: var(--text-muted);">VBYLD 2027: Hack for Social Cause | Theme: Rural Development & Livelihoods</p>
+      <div style="margin-top: 10px;">
+        <span class="badge">Human-Centered Design</span>
+        <span class="badge">Low-Literacy & Voice First</span>
+        <span class="badge">WCAG 2.1 AA Compliant</span>
+      </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Save as PDF (< 10 MB)</button>
+  </header>
+
+  <h2>1. Design Strategy for Rural Farmers in Bharat</h2>
+  <p>
+    Over 73% of Indian farmers are non-English speakers. Traditional agri-apps fail because they require multi-step logins, complex terminology, and high-bandwidth downloads. Fasal AI is engineered with radical simplicity:
+  </p>
+  <ul>
+    <li><strong>Zero-Friction Camera Access</strong>: No login barriers or passwords. The camera viewfinder opens instantly.</li>
+    <li><strong>Voice Narration in Hindi (🔊)</strong>: Semi-literate farmers can tap to listen to diagnostic results and treatment instructions read aloud in clear Hindi.</li>
+    <li><strong>Dual Treatment Model</strong>: Provides both certified chemical treatments and zero-cost indigenous organic remedies (neem, buttermilk, turmeric).</li>
+    <li><strong>Direct National Helpline</strong>: Prominent one-tap integration with the government Kisan Call Centre (1800-180-1551).</li>
+  </ul>
+
+  <div class="palette-grid">
+    <div class="color-card bg-green-dark">
+      Forest Green (#14532d)
+      <small>Brand Anchor & Field Trust</small>
+    </div>
+    <div class="color-card bg-green">
+      Action Emerald (#16a34a)
+      <small>Primary Capture & Success CTAs</small>
+    </div>
+    <div class="color-card bg-amber">
+      Harvest Amber (#d97706)
+      <small>Yield Loss Forecast Warnings</small>
+    </div>
+    <div class="color-card bg-red">
+      Alert Crimson (#dc2626)
+      <small>High/Critical Disease Badges</small>
+    </div>
+  </div>
+
+  <h2>2. Wireframe 1: Farmer Landing & Camera Capture Zone</h2>
+  <div class="wireframe-box">
++-------------------------------------------------------------------+
+| 🌾 Fasal AI (फसल AI)                  [📞 Call: 1800-180-1551]    |
++-------------------------------------------------------------------+
+|                                                                   |
+|      [ ⚡ Powered by Google Gemini AI • निःशुल्क ]                |
+|                                                                   |
+|      फसल बीमारी पहचानें तुरंत                                      |
+|      अपनी फसल की फोटो लें और पाएं तुरंत उपचार सलाह - मुफ़्त        |
+|                                                                   |
+|      +---------------+  +---------------+  +---------------+      |
+|      | 🦠 50+ रोग    |  | ⚡ 30s परिणाम |  | 🆓 100% मुफ़्त |      |
+|      +---------------+  +---------------+  +---------------+      |
+|                                                                   |
+|   + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +   |
+|   |                                                           |   |
+|   |                       [ 📸 ]                              |   |
+|   |                                                           |   |
+|   |                    फोटो लें                               |   |
+|   |              या यहाँ फ़ाइल छोड़ें                         |   |
+|   |                                                           |   |
+|   |               JPG, PNG, WEBP — मुफ़्त                     |   |
+|   + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +   |
+|                                                                   |
+|   Fasal AI कैसे काम करता है?                                      |
+|   • 📸 फोटो लें: रोगग्रस्त फसल की स्पष्ट फोटो लें                |
+|   • 🤖 AI विश्लेषण: Google Gemini AI रोग की पहचान करता है         |
+|   • 💊 उपचार पाएं: हिंदी में तुरंत उपचार सलाह मिलती है            |
++-------------------------------------------------------------------+</div>
+
+  <h2>3. Wireframe 2: AI Diagnosis Result & Hindi Voice Narration</h2>
+  <div class="wireframe-box">
++-------------------------------------------------------------------+
+| [ 🇮🇳 हिंदी (Selected) ]                   [ 🔤 English ]          |
++-------------------------------------------------------------------+
+| +---------------------------------------------------------------+ |
+| | फसल: गेहूँ (Wheat)                     [ 🟠 HIGH SEVERITY ]    | |
+| |                                                               | |
+| | रोग पाया गया:                                                 | |
+| | गेहूँ का पीला रतुआ (Yellow Rust)                               | |
+| |                                                               | |
+| | AI विश्वास स्तर: [=========================> 87%]             | |
+| |                                                               | |
+| | [ 🔊 सुनें (Listen to Diagnosis in Hindi Voice) ]             | |
+| +---------------------------------------------------------------+ |
+|                                                                   |
+| +---------------------------------------------------------------+ |
+| | ⚠️ उपज हानि अनुमान: 20-40% if untreated within 2 weeks          | |
+| | तात्कालिकता: फैलाव रोकने के लिए 3-5 दिनों में कार्रवाई करें   | |
+| +---------------------------------------------------------------+ |
+|                                                                   |
+| [v] 🔍 लक्षण (Symptoms)                                           |
+|     • पत्तियों पर पीले-नारंगी रंग की धारियाँ                      |
+|     • पत्तियों का सूखना और समय से पहले गिरना                     |
+|                                                                   |
+| [v] 🧬 कारण (Causes)                                              |
+|     • फफूँदी संक्रमण (Puccinia striiformis) हवा से फैलता है       |
+|                                                                   |
+| [v] 💊 उपचार विधि (Treatment)                                     |
+|     ⚡ तुरंत करें: संक्रमित पत्तियाँ हटाकर जलाएं                  |
+|     🧪 रासायनिक: प्रोपिकोनाजोल 25% EC (1ml/लीटर) का छिड़काव       |
+|     🌿 जैविक उपाय: नीम का तेल (5ml/L) या हल्दी + छाछ का घोल       |
+|                                                                   |
+| +---------------------------------------------------------------+ |
+| | ℹ️ मदद कहाँ पाएं?                                             | |
+| | अपने नजदीकी कृषि विज्ञान केंद्र (KVK) से संपर्क करें           | |
+| | [ 📞 Kisan Call Centre: 1800-180-1551 (Toll-Free 24/7) ]     | |
+| +---------------------------------------------------------------+ |
+|                                                                   |
+| [ 📸 नई फसल जाँचें (Scan Another Crop) ]                          |
++-------------------------------------------------------------------+</div>
+
+  <h2>4. Socio-Economic Impact Comparison</h2>
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th>Evaluation Parameter</th>
+        <th>Conventional Farming Scenario</th>
+        <th>Fasal AI Impact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Time to Diagnosis</strong></td>
+        <td>3 to 7 Days (Travel to district agronomist)</td>
+        <td><strong>30 Seconds</strong> (Instant field AI snapshot)</td>
+      </tr>
+      <tr>
+        <td><strong>Farmer Transit Expense</strong></td>
+        <td>₹400 – ₹1,200 (Bus fare, lodging, lost work)</td>
+        <td><strong>₹0</strong> (100% Free on smartphone browser)</td>
+      </tr>
+      <tr>
+        <td><strong>Literacy & Accessibility</strong></td>
+        <td>English-only labels and complex charts</td>
+        <td><strong>Hindi (Devanagari) + 🔊 Voice Narration</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Yield Loss Mitigation</strong></td>
+        <td>Up to 50% crop lost before treatment begins</td>
+        <td><strong>Early detection saves ₹30,000–₹80,000/season</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
