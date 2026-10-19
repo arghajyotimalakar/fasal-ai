@@ -73,7 +73,7 @@ A **mobile-first Progressive Web App** that puts a Google Gemini AI agronomist i
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/fasal-ai.git
+git clone https://github.com/arghajyotimalakar/fasal-ai.git
 cd fasal-ai
 ```
 
